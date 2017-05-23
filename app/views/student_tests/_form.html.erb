@@ -1,0 +1,40 @@
+<%= form_for(student_test) do |f| %>
+  <% if student_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student_test.errors.count, "error") %> prohibited this student_test from being saved:</h2>
+
+      <ul>
+      <% student_test.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <label for="">Pregunta 1</label>
+    <%= f.select :answer1, StudentTest.answer_types.keys.to_a, {}, { class: 'form-control'} %>
+  </div>
+
+  <div class="field">
+    <label for="">Pregunta 2</label>
+    <%= f.select :answer2, StudentTest.answer_types.keys.to_a, {}, { class: 'form-control'} %>
+  </div>
+
+
+
+  <div class="field">
+    <%# f.label :final_score %>
+    <%# f.number_field :final_score %>
+  </div>
+
+  <!--<button onclick="grade()">Mostrar score</button>-->
+
+  <div class="actions">
+    <%= f.submit  %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= @student_test.inspect %>
+<p>
+  <strong>:Nombre</strong>
+  <%= @student_test.name %></br>
+
+  <strong>Respuesta 1: </strong>
+  <%= @student_test.answer1 %></br>
+
+  <strong>Final score:</strong>
+  <%= @student_test.final_score %></br>
+
+</p>
+
+<%= link_to 'Edit', edit_student_test_path(@student_test) %> |
+<%= link_to 'Back', student_tests_path %>
